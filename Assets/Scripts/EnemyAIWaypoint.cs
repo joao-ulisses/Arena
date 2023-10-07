@@ -14,6 +14,7 @@ public class EnemyAiWaypoint : MonoBehaviour
     //public Transform player;
     public Transform nearestPlayer;
     public Transform spawnProjectile;
+    public ParticleSystem fumaca;
 
     ///public LayerMask whatIsGround, whatIsPlayer;
 
@@ -42,6 +43,8 @@ public class EnemyAiWaypoint : MonoBehaviour
         {
             waypoint.Add(element);
         }
+        float spawnX
+        agent.Warp();
     }
 
     private void getActiveEnemies()
@@ -217,7 +220,10 @@ public class EnemyAiWaypoint : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-
+        if (health < 15)
+        {
+            fumaca.Play();
+        }
         if (health <= 0) Invoke(nameof(DestroyEnemy), .5f);
     }
 

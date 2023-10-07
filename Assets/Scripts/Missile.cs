@@ -14,7 +14,7 @@ public class Missile : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Inimigo"))
         {
-            other.gameObject.GetComponent<EnemyAiWaypoint>().TakeDamage(2);
+            other.gameObject.GetComponent<EnemyAiWaypoint>().TakeDamage(4);
             Destroy(this.gameObject);
         }
     }
